@@ -1,0 +1,9 @@
+port: :8080
+
+database:
+  user: postgres
+  password: 2048
+  port: 5432
+  host: localhost
+  dbname: golang-blog-db
+  sslmode: disable
