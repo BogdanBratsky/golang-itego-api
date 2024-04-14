@@ -1,9 +1,9 @@
-port: :8080
+port: :3000
 
 database:
   user: postgres
   password: 2048
   port: 5432
   host: localhost
-  dbname: golang-blog-db
+  dbname: itegodb
   sslmode: disable
