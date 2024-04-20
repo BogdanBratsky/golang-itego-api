@@ -4,18 +4,21 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/bogdanbratsky/golang-itego-api/db"
-	"github.com/bogdanbratsky/golang-itego-api/internal/handlers"
+	"github.com/bogdanbratsky/golang-itego-api/api"
+	"github.com/bogdanbratsky/golang-itego-api/config"
+	"github.com/bogdanbratsky/golang-itego-api/internal/repositories"
+	"github.com/spf13/viper"
 )
 
 func main() {
-	db.InitDB()
-	defer db.CloseDB()
+	repositories.InitDB()
+	defer repositories.CloseDB()
 
-	http.HandleFunc("/api/register", handlers.CreateUserHandler)
-	http.HandleFunc("/api/login", handlers.LoginHandler)
+	if err := config.InitConfig(); err != nil {
+		log.Println("Не удалось прочитать config.yaml:", err)
+	}
 
-	if err := http.ListenAndServe(":3000", nil); err != nil {
+	if err := http.ListenAndServe(viper.GetString("port"), api.Router()); err != nil {
 		log.Println("Error: ", err)
 		return
 	}

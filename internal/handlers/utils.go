@@ -10,12 +10,13 @@ import (
 
 // Структура для формирования успешного ответа
 type response struct {
-	Success bool             `json:"success"`
-	Message string           `json:"message"`
-	Status  int              `json:"status"`
-	User    *models.UserDTO  `json:"user,omitempty"`
-	Token   string           `json:"token,omitempty"`
-	Users   []models.UserDTO `json:"users,omitempty"`
+	Success    bool             `json:"success"`
+	Message    string           `json:"message"`
+	Status     int              `json:"status"`
+	User       *models.UserDTO  `json:"user,omitempty"`
+	Token      string           `json:"token,omitempty"`
+	Users      []models.UserDTO `json:"users,omitempty"`
+	TotalCount int              `json:"totalCount,omitempty"`
 }
 
 // Функция для формирования успешного ответа
