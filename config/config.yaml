@@ -7,3 +7,14 @@ database:
   host: localhost
   dbname: itegodb
   sslmode: disable
+
+email:
+  from: bogdan_bogdanov.1@mail.ru
+  to: giraffeonelove@gmail.com
+  host: smtp.mail.ru
+  port: 587
+  password: 2TQEU8Gh0MX9viHFDufY
+
+cors:
+  addres: http://localhost:8081
+  # servaddres:
