@@ -75,7 +75,7 @@ func IsPasswordTaken(password string) bool {
 
 // функция для проверки существования пользователя
 func UserExists(name, password string) (int, bool) {
-	log.Printf("Проверка пользователя с именем: %s и паролем: %s\n", name, password)
+	log.Println("Проверка пользователя с именем и паролем: ", name, password)
 
 	query := `
 		SELECT member_id, superuser
