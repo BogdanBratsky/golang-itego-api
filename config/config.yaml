@@ -1,4 +1,4 @@
-port: :3000
+port: :8443
 
 database:
   user: postgres
@@ -16,5 +16,5 @@ email:
   password: 2TQEU8Gh0MX9viHFDufY
 
 cors:
-  addres: http://localhost:8081
+  addres: http://localhost:8080
   # servaddres:
